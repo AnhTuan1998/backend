@@ -1,46 +1,142 @@
 {
-	"_meta": {
-		"sources": [
-			"loopback/common/models",
-			"loopback/server/models",
-			"../common/models/user",
-			"./models"
-		],
-		"mixins": [
-			"loopback/common/mixins",
-			"loopback/server/mixins",
-			"../common/mixins",
-			"./mixins"
-		]
-	},
-	"ACL": {
-		"dataSource": "db",
-		"public": false
-	},
-	"RoleMapping": {
-		"dataSource": "db",
-		"public": false,
-		"options": {
-			"strictObjectIDCoercion": true
-		}
-	},
-	"Role": {
-		"dataSource": "db",
-		"public": false
-	},
-	"User": {
-		"dataSource": "mysqlDS",
-		"public": true,
-		"options": {
-			"remoting": {
-				"sharedMethods": {
-					"*": false,
-					"login": true,
-					"changePassword": true,
+  "_meta": {
+    "sources": [
+      "loopback/common/models",
+      "loopback/server/models",
+      "../common/models/user",
+      "../common/models/admin_users",
+      "../common/models/admin_user_permissions",
+      "../common/models/admin_roles",
+      "../common/models/admin_role_users",
+      "../common/models/admin_role_permissions",
+      "../common/models/admin_role_menu",
+      "../common/models/admin_permissions",
+      "../common/models/admin_menu",
+      "./models"
+    ],
+    "mixins": [
+      "loopback/common/mixins",
+      "loopback/server/mixins",
+      "../common/mixins",
+      "./mixins"
+    ]
+  },
+  "ACL": {
+    "dataSource": "db",
+    "public": false
+  },
+  "RoleMapping": {
+    "dataSource": "db",
+    "public": false,
+    "options": {
+      "strictObjectIDCoercion": true
+    }
+  },
+  "Role": {
+    "dataSource": "db",
+    "public": false
+  },
+  "User": {
+    "dataSource": "mysqlDS",
+    "public": true,
+    "options": {
+      "remoting": {
+        "sharedMethods": {
+          "*": false,
+          "login": true,
+          "changePassword": true,
           "signUpUser": true,
           "forgotPassword": true
-				}
-			}
-		}
-	}
+        }
+      }
+    }
+  },
+  "AdminUsers": {
+    "dataSource": "mysqlDS",
+    "public": true,
+    "options": {
+      "remoting": {
+        "sharedMethods": {
+          "*": false
+        }
+      }
+    }
+  },
+  "AdminUserPermissions": {
+    "dataSource": "mysqlDS",
+    "public": true,
+    "options": {
+      "remoting": {
+        "sharedMethods": {
+          "*": false
+        }
+      }
+    }
+  },
+  "AdminRoles": {
+    "dataSource": "mysqlDS",
+    "public": true,
+    "options": {
+      "remoting": {
+        "sharedMethods": {
+          "*": false
+        }
+      }
+    }
+  },
+  "AdminRoleUsers": {
+    "dataSource": "mysqlDS",
+    "public": true,
+    "options": {
+      "remoting": {
+        "sharedMethods": {
+          "*": false
+        }
+      }
+    }
+  },
+  "AdminRolePermissions": {
+    "dataSource": "mysqlDS",
+    "public": true,
+    "options": {
+      "remoting": {
+        "sharedMethods": {
+          "*": false
+        }
+      }
+    }
+  },
+  "AdminRoleMenu": {
+    "dataSource": "mysqlDS",
+    "public": true,
+    "options": {
+      "remoting": {
+        "sharedMethods": {
+          "*": false
+        }
+      }
+    }
+  },
+  "AdminPermissions": {
+    "dataSource": "mysqlDS",
+    "public": true,
+    "options": {
+      "remoting": {
+        "sharedMethods": {
+          "*": false
+        }
+      }
+    }
+  },
+  "AdminMenu": {
+    "dataSource": "mysqlDS",
+    "public": true,
+    "options": {
+      "remoting": {
+        "sharedMethods": {
+          "*": false
+        }
+      }
+    }
+  }
 }
