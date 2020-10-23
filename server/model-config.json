@@ -36,6 +36,18 @@
     "dataSource": "db",
     "public": false
   },
+
+  "AdminPermissions": {
+    "dataSource": "mysqlDS",
+    "public": true,
+    "options": {
+      "remoting": {
+        "sharedMethods": {
+          "*": false
+        }
+      }
+    }
+  },
   "User": {
     "dataSource": "mysqlDS",
     "public": true,
@@ -62,7 +74,7 @@
       }
     }
   },
-  "AdminUserPermissions": {
+  "AdminMenu": {
     "dataSource": "mysqlDS",
     "public": true,
     "options": {
@@ -117,18 +129,7 @@
       }
     }
   },
-  "AdminPermissions": {
-    "dataSource": "mysqlDS",
-    "public": true,
-    "options": {
-      "remoting": {
-        "sharedMethods": {
-          "*": false
-        }
-      }
-    }
-  },
-  "AdminMenu": {
+  "AdminUserPermissions": {
     "dataSource": "mysqlDS",
     "public": true,
     "options": {

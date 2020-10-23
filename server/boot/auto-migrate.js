@@ -4,14 +4,14 @@ module.exports = (app) => {
   const datasources = require(path.resolve(__dirname, '../datasources.json'));
 
   var mysqlDS = app.dataSources.mysqlDS;
-
+  const arr = []
   Object.keys(models).forEach(modelName => {
     if (models[modelName].dataSource === 'mysqlDS') {
-      mysqlDS.autoupdate(modelName, (err) => {
-        if (err)
-          throw new Error(`Cannot migrate model ${modelName}: ${err.message}`);
-        console.log('Model ' + modelName + ' updated');
-      });
+      arr.push(modelName)
     }
+  });
+  mysqlDS.autoupdate(arr, (err) => {
+    if (err) return
+      console.log('DB updated');
   });
 };
